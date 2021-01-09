@@ -1,0 +1,13 @@
+[SLACK]
+[SLACK.workspace_1]
+Webhook = "https://hooks.slack.com/services/xx/xx/xx"
+
+[LINE]
+[LINE.channel_1]
+CHANNEL_ACCESS_TOKEN = "xx"
+[LINE.channel_2]
+CHANNEL_ACCESS_TOKEN = "xx"
+[GMAIL]
+[GMAIL.account_1]
+GMAIL_PASSWORD = "xx"
+GMAIL_USER = "xx@gmail.com"
