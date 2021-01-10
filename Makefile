@@ -12,4 +12,10 @@ pipreq:
 noti01-slack:	
 	@curl -X POST --data-urlencode \
 	"payload={\"username\": \"noti01\", \"text\": \"n01\", \"icon_emoji\": \":ghost:\"}" \
-	${BOT01}
+	${Webhook}
+
+ch1-line:
+	@curl -X POST https://api.line.me/v2/bot/message/broadcast \
+	-H 'Content-Type: application/json' \
+	-H 'Authorization: Bearer ${CHANNEL_ACCESS_TOKEN}' \
+	-d '{"messages":[{"type": "text", "text": "hi"}]}'
