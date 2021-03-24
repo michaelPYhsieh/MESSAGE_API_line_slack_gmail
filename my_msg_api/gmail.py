@@ -1,7 +1,3 @@
-import toml
-CONFIG = toml.load('config.toml')['GMAIL']['account_1']
-
-
 def send_gmail(config, recipient=None, subject=None, content=None, isHtml=False):
     gmail_user = config['GMAIL_USER']
     gmail_password = config['GMAIL_PASSWORD']
@@ -26,6 +22,8 @@ def send_gmail(config, recipient=None, subject=None, content=None, isHtml=False)
 
 
 if __name__ == '__main__':
+    import toml
+    CONFIG = toml.load('config.toml')['GMAIL']['account_1']
     subject = '主旨'
     content = '<h3>測試一</h3>測試二'
     send_gmail(CONFIG, recipient='', subject=subject,

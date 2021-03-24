@@ -1,7 +1,3 @@
-import toml
-CONFIG = toml.load('config.toml')['TELEGRAM']['bot_1']
-
-
 # https://core.telegram.org/bots/api#sendmessage
 
 
@@ -17,6 +13,8 @@ def send_telegram(config, content=None, sendtype='text'):
 
 
 if __name__ == "__main__":
+    import toml
+    CONFIG = toml.load('config.toml')['TELEGRAM']['bot_1']
     send_telegram(CONFIG, 'hi')
     send_telegram(CONFIG, 'https://telegram.org//img/t_logo.png',
                   sendtype='Photo')

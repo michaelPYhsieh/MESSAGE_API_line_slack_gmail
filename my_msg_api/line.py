@@ -1,7 +1,3 @@
-import toml
-CONFIG = toml.load('config.toml')['LINE']['channel_1']
-
-
 def send_line(config, text=None):
     token = config['CHANNEL_ACCESS_TOKEN']
     url = "https://api.line.me/v2/bot/message/broadcast"  # broadcast
@@ -18,4 +14,6 @@ def send_line(config, text=None):
 
 
 if __name__ == '__main__':
+    import toml
+    CONFIG = toml.load('config.toml')['LINE']['channel_1']
     send_line(CONFIG, 'hi')

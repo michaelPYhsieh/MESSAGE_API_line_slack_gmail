@@ -1,8 +1,4 @@
-import toml
-CONFIG = toml.load('config.toml')['SLACK']['workspace_1']
-
-
-# app: slack.com/apps/A0F7XDUAZ-incoming-webhooks
+# get token: https://slack.com/apps/A0F7XDUAZ-incoming-webhooks
 
 
 def send_slack(config, text=None, username=None, icon_emoji=None):
@@ -20,4 +16,6 @@ def send_slack(config, text=None, username=None, icon_emoji=None):
 
 
 if __name__ == "__main__":
-    send_slack(CONFIG, 'hi')
+    import toml
+    CONFIG = toml.load('config.toml')['SLACK']['workspace_1']
+    send_slack(CONFIG, 'hi', username='hello_bot')
